@@ -34,3 +34,22 @@ highScores.forEach(
         }`)
     }
 )
+
+const topScores=highScores.filter(player=>player.score>90)
+console.log(topScores)
+
+const topPlayerNames=topScores.map(player=>player.name)
+console.log(topPlayerNames)
+
+//Asynchronous intro
+const delay=(ms)=>new Promise(resolve=>setTimeout(resolve,ms))
+const runSequence=async()=>{
+    console.log("Sequence is loading")
+    await delay(2000)
+    console.log("Waiting for server data")
+    await delay(2500)
+    console.log("Almost there")
+    await delay(500)
+    console.log("Data successfully loaded")
+}
+runSequence()
